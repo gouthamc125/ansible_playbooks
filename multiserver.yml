@@ -1,0 +1,12 @@
+--- #Defining the multiple server connection
+- name: Applying tasks to App server
+  hosts: appserver
+  tasks:
+    - debug: msg="Appserver connection sucess"
+
+- name: Applying tasks to Webserver
+  hosts: webserver
+  tasks:
+    - debug: msg="Webserver connection sucess"
+
+

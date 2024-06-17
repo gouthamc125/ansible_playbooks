@@ -1,0 +1,10 @@
+--- #Declare varaiables @ play & print value
+- hosts: webserver
+  become_user: goutham
+  become: yes
+  vars:
+    URL: www.google.com
+  tasks:
+    - name: Print variable
+      debug:
+        msg: "URL={{ URL }}"

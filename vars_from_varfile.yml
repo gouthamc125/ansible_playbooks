@@ -1,0 +1,12 @@
+--- # variables from vars file
+- hosts: webserver
+  become_user: goutham
+  become: yes
+  vars:
+    URL: www.google.com
+  vars_files:
+    - data.yml
+  tasks:
+    - name: Print variables from vars files
+      debug:
+        msg: " URL = {{ URL }}"

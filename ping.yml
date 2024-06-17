@@ -1,0 +1,9 @@
+--- #Testing the target server connection
+- hosts: webserver
+  become_user: goutham
+  become: yes
+  tasks:
+    - name: Pinging Service
+      ansible.builtin.ping:
+    - name: Ping the target servers
+      debug: msg="Connection Successful"

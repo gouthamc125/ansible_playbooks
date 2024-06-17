@@ -1,0 +1,16 @@
+--- #Executing the shell commands via playbook
+- hosts: webserver
+  become_user: goutham
+  become: yes
+  tasks:
+    - name: Execute shell commands
+      shell: "uptime"
+      register: uptime_result
+
+    - name: Converting the shell into variable
+      debug:
+        var: uptime_result
+
+    - name: Print the shell variable
+      debug:
+        msg: "{{ uptime_result.stdout }}"

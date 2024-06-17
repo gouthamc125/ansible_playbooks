@@ -1,0 +1,16 @@
+--- #Declare a variable at play level and tasks level and print it
+- hosts: webserver
+  become_user: goutham
+  become: yes
+  vars:
+    URL: www.google.com
+  tasks:
+    - name: print variable from task level
+      debug:
+        msg: "URL = {{ URL }}"
+      vars:
+        URL: www.youtube.com
+
+    - name: Print variable from play level
+      debug:
+        msg: "URL = {{ URL  }}}"
